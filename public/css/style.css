@@ -1,0 +1,232 @@
+@media (max-width : 760px) {
+
+    .enter {
+        margin-left: 7em;
+        margin-bottom: 1.5em;
+        width: 65px;
+        height: 40px;
+        font-size: 1em;
+    }
+
+    .theMessage {
+        font-size: 2em;
+        color: rgb(255, 68, 0);
+        display: inline;
+        text-align: center;
+      
+    }
+
+    .error {
+        font-size: 1em;
+        color: rgb(255, 68, 0);
+        display: inline;
+        text-align: center;
+    
+    }
+
+    .border-button {
+        border: solid 5px #a4fc51;
+        transition: 0.6s linear;
+    }
+
+    .border-button:hover {
+        border-width: 10px;
+    }
+
+    .greetingSection {
+        color: rgb(62, 59, 54);
+        background-color: rgb(201, 156, 195);
+        border: #e7e69d solid 12px;
+        box-shadow: 20px 20px 20px #c671e7;
+        font-size: larger;
+        margin: 0 auto;
+        padding: 20px;
+        width: 350px;
+        height: 650px;
+    }
+
+    .enter:hover {
+        background-color: rgb(197, 238, 135);
+    }
+
+    .greet {
+        font-size: 2em;
+        text-align: center;
+        color: black;
+
+    }
+
+    .row {
+        margin-left: 2em;
+    }
+
+    .langHeading {
+
+        font-size: 1.2em;
+        text-align: center;
+        color: black;
+    }
+
+    .nameHeading {
+        font-size: 1.2em;
+        color: black;
+    }
+
+    .valueLanguages {
+        color: black;
+        display: flex;
+        margin-left: 5.1em;
+        font-size: 1.2em;
+    }
+
+
+    footer {
+        text-align: center;
+        font-size: 1em;
+    }
+
+    .resetBtn {
+
+        margin-left: 5.5em;
+        font-size: 1em;
+    }
+
+    .resetBtn:hover {
+        background-color: rgb(197, 238, 135);
+    }
+
+
+    .valueDisplay {
+
+        margin-left: 4em;
+        width: 40px;
+        height: 30px;
+        font-size: 2em;
+        color: #000;
+    }
+
+    input[type='radio'] {
+        width: 15px;
+        height: 15px;
+        accent-color: red;
+    }
+
+    .Name {
+        width: 220px;
+        height: 30px;
+        font-size: 1.1em;
+    }
+
+}
+
+@media (min-width : 960px) {
+    .theMessage {
+        font-size: 2em;
+        color: rgb(255, 68, 0);
+        display: inline;
+        text-align: center;
+        padding: 2em;
+        padding-bottom: 12em;
+    }
+
+    .error {
+        font-size: 1.3em;
+        color: rgb(255, 68, 0);
+        margin: 0 auto;
+        width: fit-content;
+
+    }
+
+    .Name {
+        width: 210px;
+        height: 50px;
+        font-size: 1.1em;
+    }
+
+    .enter {
+        width: 80px;
+        height: 50px;
+        border: #000 solid 2px;
+        margin-left: 12.5em;
+        margin-bottom: 1.2em;
+        margin-top: 1.2em;
+        font-size: 1em;
+    }
+
+    .enter:hover {
+        background-color: rgb(197, 238, 135);
+    }
+
+    .greetingSection {
+        color: rgb(62, 59, 54);
+        background-color: rgb(201, 156, 195);
+        border: #e7e69d solid 12px;
+        box-shadow: 20px 20px 20px #c671e7;
+        font-size: larger;
+        margin: auto;
+        padding: 10px;
+        width: 550px;
+        height: 690px;
+    }
+
+    .greet {
+        font-size: 2.5em;
+        text-align: center;
+        color: black;
+    }
+
+    .langHeading {
+
+        font-size: 1.3em;
+        text-align: center;
+        color: black;
+    }
+
+    .nameHeading {
+        font-size: 1.3em;
+        color: black;
+    }
+
+    .row {
+        margin-left: 7em;
+    }
+
+    .valueLanguages {
+        color: black;
+        font-size: 1.3em;
+        display: inline;
+        margin-left: 1.3em;
+    }
+
+    input[type='radio'] {
+        width: 25px;
+        height: 25px;
+        accent-color: red;
+    }
+
+    footer {
+        font-size: 1.5em;
+        text-align: center;
+    }
+
+    .resetBtn {
+        margin-left: 11.5em;
+
+        font-size: 1em;
+        width: 110px;
+        height: 55px;
+    }
+
+    .resetBtn:hover {
+        background-color: rgb(197, 238, 135);
+    }
+
+
+    .valueDisplay {
+        margin-left: 5.5em;
+
+        font-size: 2.5em;
+        color: #000;
+
+    }
+}
