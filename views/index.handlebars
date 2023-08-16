@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Greetings widgit</title>
+  <link rel="stylesheet" href="css/styles.css">
+
+</head>
+
+<div class="container">
+
+
+  <section class="greetingSection">
+    <div>
+      <div class="error"></div>
+      <h3 class="greet">Greet Me :)</h3>
+      <div class="theMessage">{{greetingTheUser}}</div>
+      <a href="/greeted">Greeted Users</a>
+
+    </div>
+
+
+    <div class="row">
+
+      <form action="/greetings" method="POST">
+
+        <strong> <label for="Names" class="nameHeading">Name</label></strong>
+        <input type="text" value="" name="greetedName" placeholder="enter your name" class="Name" required>
+
+    </div>
+
+
+    <h5 class="langHeading">Language</h5>
+    <label class="valueLanguages">
+      <input type="radio" name="languange" class="itemTypeRadio" value="english">
+      <span class="label-body">English</span>
+    </label>
+
+    <label class="valueLanguages">
+      <input type="radio" name="languange" class="itemTypeRadio" value="afrikaans">
+      <span class="label-body">Afrikaans</span>
+    </label>
+
+    <label class="valueLanguages">
+      <input type="radio" name="languange" class="itemTypeRadio" value="arabic">
+      <span class="label-body">Arabic</span>
+    </label>
+
+    <br>
+    <br>
+    <button class="enter" type="submit" name="button">Enter</button>
+    <br>
+
+    <div class="">
+
+      <span class="valueDisplay" >{{counter}}</span>
+      <br>
+      <br>
+      <button class="resetBtn">Reset Counter</button>
+    </div>
+    </form>
+  </section>
+  <footer>&#169 Raadiyah Arend Copyright 2023</footer>
+
+  <form action=""></form>
+
+</div>
+</body>
+
+</html>

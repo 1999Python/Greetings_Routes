@@ -1,3 +1,8 @@
+import assert from 'assert';
+
+import  MainGreetings from '../functions/greetings.js';
+
+
 describe("Greeting The User", function () {
 
     it('should return a greeting to the user in Arabic"', function () {
