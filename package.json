@@ -18,5 +18,8 @@
     "express-handlebars": "^7.1.2",
     "pg-promise": "^11.5.3"
   },
+  "engines": {
+    "node": "19.7.0"
+  },
   "description": ""
 }
