@@ -9,21 +9,22 @@ body {
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 30px;
+    padding: 20px;
+    box-sizing: border-box;
 }
 
 /* Header Section */
 .greetingSection {
     background-color: rgb(201, 156, 195);
     border: #e7e69d solid 12px;
-    box-shadow: 20px 20px 20px #c671e7;
-    padding: 20px;
+    box-shadow: 10px 10px 10px #c671e7;
+    padding: 15px;
     text-align: center;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
 }
 
 .greetingSection h3 {
-    font-size: 3.9em;
+    font-size: 2.5em;
     color: black;
 }
 
@@ -31,11 +32,13 @@ body {
 a:link, a:visited {
     background-color: #f44336;
     color: white;
-    padding: 14px 25px;
+    display: block;
     text-align: center;
     text-decoration: none;
-    display: inline-block;
-    font-size: large;
+    padding: 10px;
+    font-size: 1.2em;
+    border-radius: 5px;
+    margin: 10px auto;
 }
 
 a:hover, a:active {
@@ -48,69 +51,70 @@ a:hover, a:active {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 
 .row label {
-    font-size: 1.6em;
+    font-size: 1.2em;
     color: black;
+    margin-bottom: 5px;
 }
 
 .row input {
     width: 100%;
     max-width: 350px;
-    height: 50px;
-    font-size: 1.4em;
+    height: 40px;
+    font-size: 1em;
     padding: 5px;
+    margin-bottom: 10px;
 }
 
 .Name {
-    margin-bottom: -3.4em;
+    margin-bottom: -3em;
 }
 
 .theMessage {
-    font-size: 2em;
+    font-size: 1.5em;
     color: rgb(255, 68, 0);
     display: inline;
     text-align: center;
 }
 
 input[type='radio'] {
-    width: 25px;
+    width: 20px;
     height: 20px;
-    padding: 15px;
+    padding: 10px;
     accent-color: red;
 }
 
 /* Language Section */
 .langHeading {
-    font-size: 2em;
+    font-size: 1.8em;
     text-align: center;
     border-color: #c671e7;
     color: black;
     font-weight: bold;
+    margin: 20px 0;
 }
 
 .valueLanguages {
-    font-size: 1.7em;
+    font-size: 1.4em;
     color: black;
-    margin: 0 20px;
+    margin: 0;
 }
 
 /* Buttons */
 .enter, .resetBtn {
-    height: 60px;
-    width: 120px;
-    display: inline-block;
-    padding: 15px 30px;
-    font-size: 1.2em;
+    height: 50px;
+    width: 100%;
+    padding: 10px;
+    font-size: 1em;
     background-color: #007BFF;
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    vertical-align: middle;
 }
 
 .enter:hover, .resetBtn:hover {
@@ -119,26 +123,26 @@ input[type='radio'] {
 
 /* Value Display */
 .valueDisplay {
-    font-size: 3.5em;
+    font-size: 2.5em;
     color: #000;
 }
 
 /* Footer */
 footer {
-    font-size: 2em;
+    font-size: 1.5em;
     text-align: center;
-    margin-top: 40px;
+    margin-top: 20px;
 }
 
 /* Responsive Media Queries */
 @media (max-width: 768px) {
     .container {
-        padding: 20px;
+        padding: 15px;
     }
 
     .greetingSection {
         padding: 10px;
-        margin-bottom: 20px;
+        margin-bottom: 15px;
     }
 
     .row input {
@@ -146,16 +150,10 @@ footer {
     }
 
     .valueLanguages {
-        margin: 0;
+        font-size: 1.2em;
     }
 
     .enter, .resetBtn {
-        width: 100%;
-        font-size: 1em;
-    }
-
-    .resetBtn {
-        width: 100%;
-        height: 50px;
+        font-size: 0.9em;
     }
 }
