@@ -105,9 +105,9 @@ input[type='radio'] {
 
 /* Buttons */
 .enter, .resetBtn {
-    height: 50px;
+    height: 40px;
     width: 100%;
-    padding: 10px;
+    padding: 5px;
     font-size: 1em;
     background-color: #007BFF;
     color: white;
