@@ -45,7 +45,7 @@ app.get('/', function (req, res) {
 app.post('/greetings', function (req, res) {
    
     const name = req.body.greetedName;
-    const language = req.body.languange;
+    const language = req.body.language;
 
     greetings.setName(name);
     greetings.setLanguage(language);

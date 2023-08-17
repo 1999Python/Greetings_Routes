@@ -18,6 +18,7 @@
       <div class="error"></div>
       <h3 class="greet">Greet Me :)</h3>
       <div class="theMessage">{{greetingTheUser}}</div>
+      <br>
       <a href="/greeted">Greeted Users</a>
 
     </div>
@@ -27,25 +28,22 @@
 
       <form action="/greetings" method="POST">
 
-        <strong> <label for="Names" class="nameHeading">Name</label></strong>
+     <h5> <label for="Names" class="nameHeading">NAME</label></h5> 
         <input type="text" value="" name="greetedName" placeholder="enter your name" class="Name" required>
-
     </div>
-
-
-    <h5 class="langHeading">Language</h5>
+    <h5 class="langHeading">LANGUAGE</h5>
     <label class="valueLanguages">
-      <input type="radio" name="languange" class="itemTypeRadio" value="english">
+      <input type="radio" name="language" class="itemTypeRadio" value="english">
       <span class="label-body">English</span>
     </label>
 
     <label class="valueLanguages">
-      <input type="radio" name="languange" class="itemTypeRadio" value="afrikaans">
+      <input type="radio" name="language" class="itemTypeRadio" value="afrikaans">
       <span class="label-body">Afrikaans</span>
     </label>
 
     <label class="valueLanguages">
-      <input type="radio" name="languange" class="itemTypeRadio" value="arabic">
+      <input type="radio" name="language" class="itemTypeRadio" value="arabic">
       <span class="label-body">Arabic</span>
     </label>
 
@@ -59,7 +57,7 @@
       <span class="valueDisplay" >{{counter}}</span>
       <br>
       <br>
-      <button class="resetBtn">Reset Counter</button>
+      <button class="resetBtn" name="reset">Reset</button>
     </div>
     </form>
   </section>

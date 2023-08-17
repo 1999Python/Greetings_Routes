@@ -1,4 +1,4 @@
-@media (max-width : 760px) {
+/* @media (max-width : 760px) {
 
     .enter {
         margin-left: 7em;
@@ -229,4 +229,135 @@
         color: #000;
 
     }
+} */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f7f7f7;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 30px;
+}
+
+.greetingSection {
+    background-color: rgb(201, 156, 195);
+    border: #e7e69d solid 12px;
+    box-shadow: 20px 20px 20px #c671e7;
+    padding: 20px; /* Increased padding */
+    text-align: center;
+    margin-bottom: 40px; /* Increased margin */
+}
+
+.greetingSection h3 {
+    font-size: 3.9em; /* Increased font size */
+    color: black;
+
+}
+a:link, a:visited {
+    background-color: #f44336;
+    color: white;
+    padding: 14px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: large;
+  }
+  
+  a:hover, a:active {
+    background-color: red;
+  }
+
+.row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 40px; /* Increased margin */
+}
+
+.row label {
+    font-size: 1.6em; /* Increased font size */
+    color: black;
+}
+
+.row input {
+    width: 350px; /* Increased width */
+    height: 50px; /* Increased height */
+    font-size: 1.4em; /* Increased font size */
+    padding: 5px; /* Increased padding */
+}
+
+.Name{
+    margin-bottom: -3.4em;
+}
+
+.theMessage {
+    font-size: 2em;
+    color: rgb(255, 68, 0);
+    display: inline;
+    text-align: center;
+  
+}
+
+
+input[type='radio'] {
+    width: 25px;
+    height: 20px;
+    padding:15px;
+    accent-color: red;
+}
+
+.langHeading {
+    font-size: 2em;
+    text-align: center;
+    border-color: #c671e7;
+    color: black;
+    font-weight: bold;
+}
+
+.valueLanguages {
+    font-size: 1.7em; /* Increased font size */
+    color: black;
+    margin: 0 20px; /* Increased margin */
+}
+
+.enter, .resetBtn {
+    height: 60px;
+    width: 120px;
+    display: inline-block;
+    padding: 15px 30px; /* Increased padding */
+    font-size: 1.2em; /* Increased font size */
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    vertical-align: middle;
+}
+
+.enter:hover, .resetBtn:hover {
+    background-color: #0056b3;
+}
+
+.valueDisplay {
+    font-size: 3.5em; /* Increased font size */
+    color: #000;
+}
+
+footer {
+    font-size: 2em; 
+    text-align: center;
+    margin-top: 40px;
+}
+
+.resetBtn {
+    text-align: center;
+    width: 130px; /* Increased width */
+    height: 60px; /* Increased height */
+    font-size: 1.4em; /* Increased font size */
 }

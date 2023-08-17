@@ -4,8 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        body{
+  background-image: linear-gradient(to right,rgb(238, 206, 238) , rgba(251, 251, 109, 0.887));
+           
+            font-size: 3em;
+            border-style: solid black;
+        } 
+    </style>
 </head>
 <body>
+    <h3>The List Below Are The Names Of The Previously Greeted Users.</h3>
     {{#each greeted}}
    <li> {{this}}</li>
     {{/each}}
