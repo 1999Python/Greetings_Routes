@@ -15,7 +15,10 @@
 
   <section class="greetingSection">
     <div>
-      <div class="error"></div>
+
+      {{#if errorMessage}}
+      <p class="error">{{errorMessage.error}}</p>
+      {{/if}}
       <h3 class="greet">Greet Me :)</h3>
       <div class="theMessage">{{greetingTheUser}}</div>
       <br>
@@ -23,12 +26,11 @@
 
     </div>
 
-
     <div class="row">
 
       <form action="/greetings" method="POST">
 
-     <h5> <label for="Names" class="nameHeading">NAME</label></h5> 
+        <h5> <label for="Names" class="nameHeading">NAME</label></h5>
         <input type="text" value="" name="greetedName" placeholder="enter your name" class="Name" required>
     </div>
     <h5 class="langHeading">LANGUAGE</h5>
@@ -54,10 +56,10 @@
 
     <div class="">
 
-      <span class="valueDisplay" >{{counter}}</span>
+      <span class="valueDisplay">{{counter}}</span>
       <br>
       <br>
-      <button class="resetBtn" name="reset">Reset</button>
+      <button class="resetBtn" name="reset" {{resetingCounter}}>Reset</button>
     </div>
     </form>
   </section>
