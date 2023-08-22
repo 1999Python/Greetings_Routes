@@ -52,18 +52,18 @@ export default  function MainGreetings() {
       return greetingMessage
     }
   
-    function errorMessages() {
+    function errorMessages(names, languages) {
       
       let errorMessage = '';
     
-      if (!userName && !languageType) {
+      if (!names && !languages) {
         errorMessage = 'Please enter your name and select a language.';
       } 
-      else if (!userName) {
+      else if (!names) {
         errorMessage = 'Please enter your name.';
       }
       
-     else if (languageType === "") {
+     else if (!languages) {
         errorMessage = 'Please select a language.';
       }
     

@@ -12,14 +12,13 @@
 
 <div class="container">
 
-
   <section class="greetingSection">
     <div>
 
       {{#if errorMessage}}
       <p class="error">{{errorMessage.error}}</p>
       {{/if}}
-      <h3 class="greet">Greet Me :)</h3>
+      <h3 class="greet" >Greet Me :)</h3>
       <div class="theMessage">{{greetingTheUser}}</div>
       <br>
       <a href="/greeted">Greeted Users</a>
@@ -31,7 +30,7 @@
       <form action="/greetings" method="POST">
 
         <h5> <label for="Names" class="nameHeading">NAME</label></h5>
-        <input type="text" value="" name="greetedName" placeholder="enter your name" class="Name" required>
+        <input type="text" value="" name="greetedName" placeholder="    Please enter your name" class="Name" >
     </div>
     <h5 class="langHeading">LANGUAGE</h5>
     <label class="valueLanguages">

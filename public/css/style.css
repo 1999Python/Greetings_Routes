@@ -10,6 +10,19 @@ body {
     font-weight: bold;
 }
 
+    .homebtn:link, .homebtn:visited {
+        background-color: #f0cac7;
+        color: white;
+        padding: 14px 25px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: large;
+    }
+   
+.homebtn:hover, .homebtn:active {
+    background-color: rgb(249, 229, 229);
+}
 .container {
     max-width: 1200px;
     margin: 0 auto;
