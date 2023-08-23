@@ -35,7 +35,14 @@ app.set('views', './views');
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+app.use(function(req, res, next){
+  res.setTimeout(3000, function(){
+      
+          res.send();
+      });
 
+  next();
+});
 app.use(session({
 secret: 'your-secret-key',
 resave: true,
@@ -47,46 +54,51 @@ app.use(flash());
 //routes
 
 app.get('/', function (req, res) {
-    const userName = greetings.getName(); // Get the user's name
-    const greetingTheUser = userName ? greetings.greetingTheUser() : ''; // Generate greeting if a name is available
-    const counter = greetings.amountOfUsers();
-    const errorMessage = req.flash();
-  
-    res.render('index', {
+ 
+  const userName = greetings.getName(); // Get the user's name
+  const greetingTheUser = userName ? greetings.greetingTheUser() : ''; // Generate greeting if a name is available
+  const counter = greetings.amountOfUsers();
+  const errorMessage = req.flash();
+
+  res.render('index', {
       counter,
       greetingTheUser,
       errorMessage,
-    });
   });
+});
+
   
 
-// app.get('/', function (req, res) {
 
-// const greetingTheUser = greetings.greetingTheUser();
-// const counter = greetings.amountOfUsers();
-// const errorMessage = req.flash();
+ 
 
-// console.log(req.flash('error'));
+// app.post('/greetings', function (req, res) {
 
-// res.render('index', {
-//   counter,
-//   greetingTheUser,
-//   errorMessage
-// });
-// });
+// const name = req.body.greetedName;
+// const language = req.body.language;
+
+// req.flash('error', greetings.errorMessages(name, language));
+
+// greetings.setName(name);
+// greetings.setLanguage(language);
+
+//     res.redirect('/');
+
+// })
 
 app.post('/greetings', function (req, res) {
+  const name = req.body.greetedName;
+  const language = req.body.language;
 
-const name = req.body.greetedName;
-const language = req.body.language;
+  req.flash('error', greetings.errorMessages(name, language));
 
-req.flash('error', greetings.errorMessages(name, language));
+  greetings.setName(name);
+  greetings.setLanguage(language);
 
-greetings.setName(name);
-greetings.setLanguage(language);
+  res.redirect('/');
 
-res.redirect('/')
-})
+});
+
 
 app.get('/greeted', function (req, res) {
 
@@ -96,16 +108,7 @@ res.render("greeted", { greeted: greetedNames })
 })
 
 
-app.post('/reset', function (req, res) {
-
-const resetingCounter = greetings.resetCounter();
-
-greetings.resetCounter(resetingCounter);
-
-res.redirect('/')
-})
-
-//Port
+//Port 3012
 app.listen(port, () => {
 console.log(`Server is running on port ${port}`);
 });

@@ -16,9 +16,9 @@
     <div>
 
       {{#if errorMessage}}
-      <p class="error">{{errorMessage.error}}</p>
+      <h5 class="error">{{errorMessage.error}}</h5>
       {{/if}}
-      <h3 class="greet" >Greet Me :)</h3>
+      <h3 class="greet">Greet Me :)</h3>
       <div class="theMessage">{{greetingTheUser}}</div>
       <br>
       <a href="/greeted">Greeted Users</a>
@@ -30,7 +30,7 @@
       <form action="/greetings" method="POST">
 
         <h5> <label for="Names" class="nameHeading">NAME</label></h5>
-        <input type="text" value="" name="greetedName" placeholder="    Please enter your name" class="Name" >
+        <input type="text" value="" name="greetedName" placeholder="    Please enter your name" class="Name">
     </div>
     <h5 class="langHeading">LANGUAGE</h5>
     <label class="valueLanguages">
@@ -68,5 +68,21 @@
 
 </div>
 </body>
+<script>
+  const error = document.querySelector(".error");
+  const theMessage = document.querySelector(".theMessage");
+
+ if (error.textContent !== "") {
+    setTimeout(() => {
+      error.textContent = "";
+    }, 3000);
+    }
+
+    if (theMessage.textContent !== "") {
+    setTimeout(() => {
+      theMessage.textContent = "";
+    }, 3000);
+    }
+</script>
 
 </html>

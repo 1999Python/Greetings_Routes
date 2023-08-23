@@ -63,9 +63,17 @@ export default  function MainGreetings() {
         errorMessage = 'Please enter your name.';
       }
       
+      else if (!ValidateName(names) && !languages) {
+        errorMessage = 'Please enter a valid name and a select language.';
+      }
      else if (!languages) {
         errorMessage = 'Please select a language.';
       }
+      else if (!ValidateName(names)){
+        errorMessage = 'Please enter a valid name.';
+      }
+
+      
     
       return errorMessage;
     }
