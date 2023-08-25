@@ -16,17 +16,17 @@ const query = (db) => {
       };
 
       const getGreetedNames = async () => {
-        return await db.any("SELECT DISTINCT name FROM name");
+        return await db.any("SELECT DISTINCT name FROM guest");
       };
     
     
     const updateCount = async () => {
         return await db.oneOrNone(
-            "SELECT COUNT(DISTINCT ames) AS count FROM name"
+            "SELECT COUNT(DISTINCT name) AS count FROM guest"
         );
       };
     const reset = async () => {
-        await db.none("DELETE FROM names");
+        await db.none("DELETE FROM guest");
     };
     
     return {
