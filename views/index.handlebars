@@ -22,17 +22,19 @@
       <div class="theMessage">{{greetingTheUser}}</div>
       <br>
       <a href="/greeted">Greeted Users</a>
-
+<br><br>
     </div>
 
     <div class="row">
 
       <form action="/greetings" method="POST">
 
-        <h5> <label for="Names" class="nameHeading">NAME</label></h5>
+        <h4> <label for="Names" class="nameHeading">NAME</label></h4>
         <input type="text" value="" name="greetedName" placeholder="    Please enter your name" class="Name">
     </div>
-    <h5 class="langHeading">LANGUAGE</h5>
+     <h5 class="langHeading">LANGUAGE</h5>
+    <div class="radio-container">
+       
     <label class="valueLanguages">
       <input type="radio" name="language" class="itemTypeRadio" value="english">
       <span class="label-body">English</span>
@@ -48,6 +50,8 @@
       <span class="label-body">Arabic</span>
     </label>
 
+    </div>
+  
     <br>
     <br>
     <button class="enter" type="submit" name="button">Enter</button>
@@ -58,7 +62,7 @@
       <span class="valueDisplay">{{counter}}</span>
       <br>
       <br>
-      <button class="resetBtn" name="reset" {{resetingCounter}}>Reset</button>
+      <button class="resetBtn" name="reset" {{reset}}>Reset</button>
     </div>
     </form>
   </section>

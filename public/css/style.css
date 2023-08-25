@@ -3,7 +3,8 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f7f7f7;
+
+    background-image: url(/public/css/back.jpg);
 }
 .error{
     color: red;
@@ -19,6 +20,13 @@ body {
         display: inline-block;
         font-size: large;
     }
+    .radio-container{
+        display: flex; /* Make each label a block to stack them vertically */
+    }
+    .radio-container label {
+      
+        margin-right: 53px; /* Add spacing between radio buttons */
+      }
    
 .homebtn:hover, .homebtn:active {
     background-color: rgb(249, 229, 229);
@@ -93,15 +101,15 @@ a:hover, a:active {
 }
 
 input[type='radio'] {
-    width: 25px;
-    height: 20px;
-    padding: 15px;
+    width: 29px;
+    height: 33px;
+    padding: 5px;
     accent-color: red;
 }
 
 /* Language Section */
 .langHeading {
-    font-size: 2em;
+    font-size: 3em;
     text-align: center;
     border-color: #c671e7;
     color: black;
@@ -109,7 +117,7 @@ input[type='radio'] {
 }
 
 .valueLanguages {
-    font-size: 1.7em;
+    font-size: 2.5em;
     color: black;
     margin: 0 20px;
 }
