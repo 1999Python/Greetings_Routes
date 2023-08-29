@@ -16,7 +16,7 @@ const query = (db) => {
       };
 
       const getGreetedNames = async () => {
-        return await db.any("SELECT DISTINCT name FROM guest");
+        return await db.any("SELECT name, count FROM guest");
       };
     
     

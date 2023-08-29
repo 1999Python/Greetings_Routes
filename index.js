@@ -1,11 +1,11 @@
+import 'dotenv/config';
 import express from 'express';
 import bodyParser from 'body-parser';
 import exphbs from 'express-handlebars';
 import session from 'express-session';
 import flash from 'connect-flash';
 import pgPromise from 'pg-promise';
-import 'dotenv/config';
-import routes from './routes/route.js'
+import routes  from './routes/route.js'
 import query from './service/queries.js'
 import MainGreetings from './functions/greetings.js';
 
@@ -41,7 +41,9 @@ const queries = query(db);
 
 // console.log(await queries.insert("PING"))
 //routes
-routes(app, queries, greetings);
+const appRoutes = routes(app, queries, greetings);
+
+
 //port
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);

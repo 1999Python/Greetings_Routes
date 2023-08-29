@@ -18,11 +18,11 @@
 <body>
     <a href='/' class="homebtn"><button>Home</button></a>
 
-    <h3>The List Below Are The Names Of The Previously Greeted Users</h3>
-    {{#each greeted}}
-    <li> {{this.name}} (Count: {{this.count}})</li>
-    {{/each}}
-
+   <ul>
+  {{#each greetedNames }}
+    <li>{{this.name}} -  {{this.count}}times</li>
+  {{/each}}
+</ul>
 
 </body>
 
