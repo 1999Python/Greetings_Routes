@@ -10,7 +10,6 @@ import query from './service/queries.js'
 import MainGreetings from './functions/greetings.js';
 
 const app = express();
-const greetings = MainGreetings();
 const port = process.env.PORT || 3012;
 const pgp = pgPromise();
 
@@ -38,11 +37,11 @@ const connectionString = process.env.DATABASE_URL;
 const db = pgp(connectionString);
 
 const queries = query(db);
+const greetings = MainGreetings(queries);
 
 // console.log(await queries.insert("PING"))
 //routes
 const appRoutes = routes(app, queries, greetings);
-
 
 //port
 app.listen(port, () => {

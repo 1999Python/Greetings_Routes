@@ -15,6 +15,11 @@ const query = (db) => {
         );
       };
 
+const userCount = async (name) => {
+  return await db.oneOrNone("SElECT count FROM guest WHERE name = $1", [name])
+
+}
+
       const getGreetedNames = async () => {
         return await db.any("SELECT name, count FROM guest");
       };
@@ -34,7 +39,8 @@ const query = (db) => {
         reset,
         count,
         getGreetedNames,
-        updateCount
+        updateCount,
+        userCount
     };
 };
 

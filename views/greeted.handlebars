@@ -17,10 +17,10 @@
 
 <body>
     <a href='/' class="homebtn"><button>Home</button></a>
-
+<h2 style="text-align: center;">The following names have been greeted:</h2>
    <ul>
   {{#each greetedNames }}
-    <li>{{this.name}} -  {{this.count}}times</li>
+   <a class="greetedHbs" href="/counter/{{this.name}}"><li>{{this.name}} {{this.count}}</li></a>
   {{/each}}
 </ul>
 

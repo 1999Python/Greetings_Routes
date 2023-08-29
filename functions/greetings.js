@@ -1,4 +1,4 @@
-export default  function MainGreetings() {
+export default  function MainGreetings(queries) {
 
     var counter = 0;
     var languageType = '';
@@ -6,10 +6,12 @@ export default  function MainGreetings() {
     var userName = '';
   
   
-    function setName(name) {
+   async function setName(name) {
       if (ValidateName(name)) {
         if (!partyUsers.includes(name)) {
+        await queries.insert(name)
           partyUsers.push(name)
+        
         }
         userName = name
       }
@@ -20,8 +22,10 @@ export default  function MainGreetings() {
       return userName;
     }//getting a single name that was set
   
-    function getNames() {
+   async function getNames() {
+    // let names =  await queries.getGreetedNames()
       return partyUsers;
+      // return names;
     }//getting the users
   
     function setLanguage(language) {
@@ -72,8 +76,6 @@ export default  function MainGreetings() {
       else if (!ValidateName(names)){
         errorMessage = 'Please enter a valid name.';
       }
-
-      
     
       return errorMessage;
     }

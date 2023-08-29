@@ -1,10 +1,13 @@
 const routes = (app, queries, greetings) => {
 
     app.get('/', async function (req, res) {
-      const userName = greetings.getName();
+     
+      const userName = await greetings.getName();
+   
       const greetingTheUser = userName ? greetings.greetingTheUser() : '';
       const counter = await queries.updateCount(); // Update the counter from the database
       const errorMessage = req.flash('error');
+      // console.log(errorMessage)
   
       res.render('index', {
         counter: counter.count,
@@ -16,6 +19,7 @@ const routes = (app, queries, greetings) => {
     app.get('/greeted', async function (req, res) {
       try {
         const greetedNames = await queries.getGreetedNames();
+        
 
         console.log(greetedNames)
         res.render('greeted', { greetedNames });
@@ -31,23 +35,26 @@ const routes = (app, queries, greetings) => {
   
       req.flash('error', greetings.errorMessages(name, language));
   
-      await queries.insert(name); // Insert or update the name's count in the database
-      greetings.setName(name);
+       await greetings.setName(name);
+
       greetings.setLanguage(language);
+    
+      // await queries.insert(name); // Insert or update the name's count in the database
   
       res.redirect('/');
     });
   
+
     app.post('/reset', async (req, res) => {
+
       await queries.reset();
       greetings.reset();
-      res.redirect("/");
+      res.redirect('/');
+    
     });
   
 
   }
-  
-
   
 
 

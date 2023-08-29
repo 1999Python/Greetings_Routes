@@ -16,12 +16,12 @@
     <div>
 
       {{#if errorMessage}}
-      <h5 class="error">{{errorMessage.error}}</h5>
+      <h5 class="error">{{errorMessage}}</h5>
       {{/if}}
       <h3 class="greet">Greet Me :)</h3>
       <div class="theMessage">{{greetingTheUser}}</div>
       <br>
-      <a href="/greeted">Greeted Users</a>
+      <a class="btnGrt" href="/greeted">Greeted Users</a>
 <br><br>
     </div>
 
@@ -62,13 +62,13 @@
       <span class="valueDisplay">{{counter}}</span>
       <br>
       <br>
-      <button class="resetBtn" name="reset" {{reset}}>Reset</button>
+     
     </div>
     </form>
+      <form action="/reset"> <button class="resetBtn" name="reset" type="submit" {{reset}}>Reset</button></form>
+    
   </section>
   <footer>&#169 Raadiyah Arend Copyright 2023</footer>
-
-  <form action=""></form>
 
 </div>
 </body>
