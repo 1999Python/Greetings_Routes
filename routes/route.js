@@ -47,16 +47,15 @@ const routes = (app, queries, greetings) => {
 
     app.post('/reset', async (req, res) => {
 
-      await queries.reset();
-      greetings.reset();
-      res.redirect('/');
+        try {
+          await queries.reset();
+          greetings.resetCounter()
+          res.redirect('/');
+        } catch (err) {
+          console.log('Error reseting app', err)
+      }
+      }
     
-    });
+    )}
   
-
-  }
-  
-
-
-
   export default routes;

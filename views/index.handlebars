@@ -65,13 +65,12 @@
      
     </div>
     </form>
-      <form action="/reset"> <button class="resetBtn" name="reset" type="submit" {{reset}}>Reset</button></form>
+      <form  action="/reset" method="post"> <button class="resetBtn" name="reset" type="submit" {{reset}}>Reset</button></form>
     
   </section>
   <footer>&#169 Raadiyah Arend Copyright 2023</footer>
 
 </div>
-</body>
 <script>
   const error = document.querySelector(".error");
   const theMessage = document.querySelector(".theMessage");
@@ -81,12 +80,14 @@
       error.textContent = "";
     }, 3000);
     }
-
-    if (theMessage.textContent !== "") {
+ if (theMessage.textContent !== "") {
     setTimeout(() => {
       theMessage.textContent = "";
     }, 3000);
     }
+   
 </script>
+</body>
+
 
 </html>

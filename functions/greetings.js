@@ -85,9 +85,10 @@ export default  function MainGreetings(queries) {
     counter = value;
     }
   
-    function resetCounter() {
+    function resetCounter(name) {
       counter = 0;
       partyUsers= [];
+  
     }//reset the user counter num to 0
   
     function getCounter() {
