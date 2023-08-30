@@ -71,7 +71,7 @@
   <footer>&#169 Raadiyah Arend Copyright 2023</footer>
 
 </div>
-<script>
+{{!-- <script>
   const error = document.querySelector(".error");
   const theMessage = document.querySelector(".theMessage");
 
@@ -83,11 +83,34 @@
  if (theMessage.textContent !== "") {
     setTimeout(() => {
       theMessage.textContent = "";
-    }, 3000);
+    }, 1000);
     }
    
-</script>
-</body>
+</script> --}}
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const error = document.querySelector(".error");
+    const theMessage = document.querySelector(".theMessage");
 
+  if (error.textContent !== "") {
+  console.log("Error content not empty");
+  setTimeout(() => {
+    error.textContent = "";
+    console.log("Error content cleared");
+  }, 3000);
+}
+
+if (theMessage.textContent !== "") {
+  console.log("Message content not empty");
+  setTimeout(() => {
+    theMessage.textContent = "";
+    console.log("Message content cleared");
+  }, 1000);
+}
+
+  });
+</script>
+
+</body>
 
 </html>

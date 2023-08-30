@@ -1,16 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Counter</title>
+    <title>{{ username }}'s Greeting Count</title>
+    <style>
+        body {
+            background-image: linear-gradient(to right, rgb(238, 206, 238), rgba(251, 251, 109, 0.887));
+            font-size: 3em;
+            border-style: solid black;
+        }
+    </style>
 </head>
+
 <body>
-    <ul>
-
-   {{this.count}}
-
-</ul>
-    
+    <h2 style="text-align: center;">{{ username }}'s Greeting Count:</h2>
+    <p style="text-align: center;">Count: {{ count }}</p>
+    <a href="/" class="homebtn"><button>Home</button></a>
 </body>
+
 </html>
