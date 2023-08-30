@@ -101,12 +101,41 @@ body {
 .Name {
     margin-bottom: -3.4em;
 }
+.buttonIn {
+    width: 450px;
+    position: relative;
+}
+  
+input {
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+    outline: none;
+    height: 50px;
+    border-radius: 5px;
+}
+  
+button {
+    position: absolute;
+    top: 0;
+    border-radius: 5px;
+    right: 0px;
+    z-index: 2;
+    border: none;
+    top: 0px;
+    height: 50px;
+    cursor: pointer;
+    color: white;
+    background-color: #1e90ff;
+    transform: translateX(2px);
+}
 
 .theMessage {
-    font-size: 2em;
-    color: rgb(255, 68, 0);
+    font-size: 3.3em;
+    color: rgb(162, 76, 44);
     display: inline;
     text-align: center;
+font-weight: bolder;
 }
 
 input[type='radio'] {
@@ -131,8 +160,8 @@ input[type='radio'] {
     margin: 0 20px;
 }
 
-/* Buttons */
-.enter, .resetBtn {
+
+.resetBtn {
     height: 60px;
     width: 120px;
     display: inline-block;
@@ -147,7 +176,7 @@ input[type='radio'] {
     vertical-align: middle;
 }
 
-.enter:hover, .resetBtn:hover {
+ .resetBtn:hover {
     background-color: #0056b3;
 }
 

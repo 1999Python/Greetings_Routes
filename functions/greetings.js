@@ -9,7 +9,7 @@ export default  function MainGreetings(queries) {
    async function setName(name) {
       if (ValidateName(name)) {
         if (!partyUsers.includes(name)) {
-        // await queries.insert(name)
+        await queries.insert(name)
           partyUsers.push(name)
         
         }

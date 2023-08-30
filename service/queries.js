@@ -21,9 +21,13 @@ const userCount = async (name) => {
 }
 
       const getGreetedNames = async () => {
-        return await db.any("SELECT name, count FROM guest");
+        return await db.any("SELECT DISTINCT name, count FROM guest");
       };
     
+      const greetedUser = async () => {
+        return await db.any("SELECT name, count FROM guest");
+
+      };
     
     const updateCount = async () => {
         return await db.oneOrNone(
@@ -31,14 +35,7 @@ const userCount = async (name) => {
         );
       };
  
-  //   const reset = async () => {
-  //     try {
-  //         await db.none("DELETE FROM guest");
-  //         console.log("Guest table reset successfully.");
-  //     } catch (error) {
-  //         console.error("Error resetting guest table:", error.message);
-  //     }
-  // };
+ 
   const reset = async () => {
     try {
       await db.none('DELETE FROM guest'); // Delete all records from the "guest" table
@@ -54,7 +51,8 @@ const userCount = async (name) => {
         count,
         getGreetedNames,
         updateCount,
-        userCount
+        userCount,
+        greetedUser
     };
 };
 

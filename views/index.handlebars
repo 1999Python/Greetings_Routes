@@ -19,18 +19,22 @@
       <h5 class="error">{{errorMessage}}</h5>
       {{/if}}
       <h3 class="greet">Greet Me :)</h3>
-      <div class="theMessage">{{greetingTheUser}}</div>
+  
       <br>
-      <a class="btnGrt" href="/greeted">Greeted Users</a>
-<br><br>
     </div>
 
     <div class="row">
 
       <form action="/greetings" method="POST">
 
-        <h4> <label for="Names" class="nameHeading">NAME</label></h4>
+        <h4><label for="Names" class="nameHeading">NAME</label></h4>
+
+      <div class="buttonIn">
         <input type="text" value="" name="greetedName" placeholder="    Please enter your name" class="Name">
+        <button class="enter" type="submit" name="button">Enter</button>
+    </div>
+     
+
     </div>
      <h5 class="langHeading">LANGUAGE</h5>
     <div class="radio-container">
@@ -51,23 +55,22 @@
     </label>
 
     </div>
-  
-    <br>
-    <br>
-    <button class="enter" type="submit" name="button">Enter</button>
-    <br>
+  <div class="theMessage">{{greetingTheUser}}</div>
+    <hr>
 
-    <div class="">
+  
 
       <span class="valueDisplay">{{counter}}</span>
       <br>
-      <br>
-     
-    </div>
+
+    <br>
+
+      <a class="btnGrt" href="/greeted">Greeted Users</a>
     </form>
-      <form  action="/reset" method="post"> <button class="resetBtn" name="reset" type="submit" {{reset}}>Reset</button></form>
+   
     
   </section>
+     <form  action="/reset" method="post"> <button class="restBtn" name="reset" type="submit" {{reset}}>Reset</button></form>
   <footer>&#169 Raadiyah Arend Copyright 2023</footer>
 
 </div>
