@@ -11,7 +11,7 @@ export default  function MainGreetings(queries) {
 
   //If the bruv does not exist (userCount is null), it inserts the user into guest using queries.insert(name). 
   //If user already exists, it updates the count 
-              if (userCount === null) {
+              if (userCount == null) {
                   name = name.charAt(0).toUpperCase() + name.slice(1).toLowerCase();
                   await queries.insert(name);
               } else {
@@ -27,13 +27,10 @@ export default  function MainGreetings(queries) {
           //retrieves the list of greeted names from the database using queries.getGreetedNames()
           // and then extracts only the name values from the database results.
       }
- 
-  
   
     function getName() {
       return userName;
     }//getting a single name that was set
- 
  
   
     function setLanguage(language) {
