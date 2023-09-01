@@ -57,6 +57,9 @@ describe('Greetings Web App with Routes',function () {
           { name: 'food', count: 1 },
           { name: 'juice', count: 1 }
         ];
+        //forEach loop to iterate through the expectedNamesAndCounts array checks 
+        //if each expected name exists in the getGreetedNames using find.
+        //For each expected name found, assert that the count matches the expected count.
       
         expectedNamesCounts.forEach((expected) => {
           const found = getGreetedNames.find((entry) => entry.name === expected.name);
