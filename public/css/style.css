@@ -1,230 +1,125 @@
-/* Base styles */
 body {
-    font-family: Arial, sans-serif;
+   font-size: larger;
     margin: 0;
     padding: 0;
+    font-family: Arial, sans-serif;
+  }
 
-    background-image: url(/public/css/back.jpg);
-}
-.error{
-    color: red;
-    font-weight: bold;
-}
-
-    .homebtn:link, .homebtn:visited {
-        background-color: #f0cac7;
-        color: white;
-        padding: 14px 25px;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-        font-size: large;
-    }
-    .radio-container{
-        display: flex; /* Make each label a block to stack them vertically */
-    }
-    .radio-container label {
-      
-        margin-right: 53px; /* Add spacing between radio buttons */
-      }
-   
-.homebtn:hover, .homebtn:active {
-    background-color: rgb(249, 229, 229);
-}
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 30px;
-}
-
-/* Header Section */
-.greetingSection {
-    background-color: rgb(201, 156, 195);
-    border: #e7e69d solid 12px;
-    box-shadow: 20px 20px 20px #c671e7;
+  .container {
+    max-width: 800px;
+    margin: 20px auto 0;
     padding: 20px;
+    background: linear-gradient( #ff99cc, #e6e695, #ccffcc);
+    border-radius: 10px;
+    box-shadow: black;
+  }
+  .greetingSection {
     text-align: center;
-    margin-bottom: 40px;
-}
+  }
 
-.greetingSection h3 {
-    font-size: 3.9em;
-    color: black;
-}
-.greetedHbs{
-    /* background-color: antiquewhite; */
-    color: rgb(173, 149, 149);
-    padding: 14px 25px;
-    text-align: center;
-    text-decoration: none;
-    -webkit-text-stroke: 0.5px black;
-    font-size: 1em;
-    
-}
+  .error {
+    color: red;
+  }
 
+  .greet {
+    color: #ff3399;
+  }
 
-.btnGrt:link, .btnGrt:visited {
-    background-color: #f44336;
-    color: white;
-    padding: 14px 25px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: large;
-} */
+  .nameHeading {
+    color: #ff3399;
+  }
 
- .btnGrt:hover, .btnGrt:active {
-    background-color: red;
-}
-
-/* Form Inputs and Labels */
-.row {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 20px;
-}
-
-.row label {
-    font-size: 1.6em;
-    color: black;
-}
-
-.row input {
+  .Name {
     width: 100%;
-    max-width: 350px;
-    height: 50px;
-    font-size: 1.4em;
-    padding: 5px;
-}
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
 
-.Name {
-    margin-bottom: -3.4em;
-}
-.buttonIn {
-    width: 450px;
-    position: relative;
-}
-  
-input {
-    margin: 0px;
-    padding: 0px;
-    width: 100%;
-    outline: none;
-    height: 50px;
-    border-radius: 5px;
-}
-  
-button {
- 
-    top: 0;
-    border-radius: 5px;
-    right: 0px;
-    z-index: 2;
+  .enter {
+    background-color: #ff3399;
+    color: #fff;
     border: none;
-    top: 0px;
-    height: 50px;
-    cursor: pointer;
-    color: white;
-    background-color: #1e90ff;
-    transform: translateX(2px);
-}
-
-.theMessage {
-    font-size: 3.3em;
-    color: rgb(162, 76, 44);
-    display: inline;
-    text-align: center;
-font-weight: bolder;
-}
-
-input[type='radio'] {
-    width: 29px;
-    height: 33px;
-    padding: 5px;
-    accent-color: red;
-}
-
-/* Language Section */
-.langHeading {
-    font-size: 3em;
-    text-align: center;
-    border-color: #c671e7;
-    color: black;
-    font-weight: bold;
-}
-
-.valueLanguages {
-    font-size: 2.5em;
-    color: black;
-    margin: 0 20px;
-}
-
-
-
-/* Value Display */
-.valueDisplay {
-    font-size: 3.5em;
-    color: #000;
-}
-
-/* Footer */
-footer {
-    font-size: 2em;
-    text-align: center;
-    margin-top: 40px;
-}
-
-/* Responsive Media Queries */
-@media (max-width: 768px) {
-    .container {
-        padding: 20px;
-    }
-
-    .greetingSection {
-        padding: 10px;
-        margin-bottom: 20px;
-    }
-
-    .row input {
-        max-width: 100%;
-    }
-
-    .valueLanguages {
-        margin: 0;
-    }
-
-    .enter, .resetBtn {
-        width: 100%;
-        font-size: 1em;
-    }
-
-    .resetBtn {
-        width: 100%;
-        height: 50px;
-    }
-}
-.resetBtn {
-    margin-top: 20px; /* Add space at the top */
     padding: 10px 20px;
-    font-size: 1.2em;
-    background-color: #007BFF;
-    color: white;
-    border: none;
-    border-radius: 5px;
     cursor: pointer;
-    transition: 0.3s ease;
-}
+    border-radius: 5px;
+  }
 
-.resetBtn:hover {
-    background-color: #0056b3;
-}
+  .langHeading {
+    color: #ff3399;
+    margin-top: 20px;
+  }
 
-/* Footer */
-footer {
-    font-size: 1.2em;
+  .radio-container {
+    display: flex;
+    justify-content: center;
+  }
+
+  .valueLanguages {
+    margin-right: 20px;
+    color: #ff3399;
+    display: flex;
+    align-items: center;
+  }
+
+  .itemTypeRadio {
+    margin-right: 5px;
+    accent-color: red;
+  }
+
+  .label-body {
+    font-weight: bold;
+  }
+
+  .theMessage {
+    margin-top: 20px;
+    font-size: 24px;
+    color: #ff3399;
+  }
+
+  .valueDisplay {
+    color: #ff3399;
+    font-size: 24px;
+  }
+
+  .restBtn {
+    display: block;
+    background-color: #ff3399;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 360px;
+    margin-top: 20px;
+    border-radius: 5px;
+    box-sizing: border-box; /* Add this line */
+  }
+  
+  .restBtn:hover {
+    background-color: #ff0066;
+  }
+  
+  .btnGrt {
+    display: block;
+    background-color: #ff3399;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    margin-top: 20px;
+    border-radius: 5px;
+    box-sizing: border-box; /* Add this line */
+  }
+  
+  .btnGrt:hover {
+    background-color: #ff0066;
+  }
+  
+
+  footer {
     text-align: center;
-    margin-top: 40px;
-    margin-bottom: 20px; /* Add space at the bottom */
-}
+    margin-top: 20px;
+    color: #999;
+  }
+
+
+
+

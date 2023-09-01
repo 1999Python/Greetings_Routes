@@ -90,31 +90,23 @@ export default  function MainGreetings(queries) {
     counter = value;
     }
   
-    function resetCounter(name) {
-      counter = 0;
-      partyUsers= [];
-  
-    }//reset the user counter num to 0
+   
   
     function getCounter() {
       return counter;
     }//get the amount of users 
   
-    function amountOfUsers() {
-      counter = partyUsers.length;
-      //get the amount of users by pushing all the users names in an array and the count each of them on the counter.
-      return counter
-    }
+
   
     return {
       errorMessages,
-      resetCounter,
+     
       getName,
       getNames,
       setName,
       setLanguage,
       getCounter,
-      amountOfUsers,
+   
       ValidateName,
       greetingTheUser
     }

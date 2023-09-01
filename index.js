@@ -10,7 +10,7 @@ import query from './service/queries.js'
 import MainGreetings from './functions/greetings.js';
 
 const app = express();
-const port = process.env.PORT || 3012;
+const port = process.env.PORT || 3015;
 const pgp = pgPromise();
 
 
