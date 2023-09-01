@@ -46,7 +46,6 @@ describe('Greetings Web App with Routes',function () {
         assert.equal(count.count, 3)
       });
       
-
       it('should return a distinctive name and amount greeted from the table', async () =>{
         await query.insert("food");
         await query.insert("juice");

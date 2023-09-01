@@ -20,13 +20,12 @@ const userCount = async (name) => {
 
 }
 
-
       const getGreetedNames = async () => {
-        return await db.any("SELECT DISTINCT name, count FROM guest");
+        return await db.many("SELECT DISTINCT name, count FROM guest");
       };
     
       const greetedUser = async () => {
-        return await db.any("SELECT name, count FROM guest");
+        return await db.many("SELECT name, count FROM guest");
 
       };
     

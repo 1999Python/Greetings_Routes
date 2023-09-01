@@ -2,32 +2,39 @@ export default  function MainGreetings(queries) {
 
     var counter = 0;
     var languageType = '';
-    var partyUsers = [];
     var userName = '';
+ //not using that array anymore :) using only the database amazzzing mahn
   
-  
-   async function setName(name) {
-      if (ValidateName(name)) {
-        if (!partyUsers.includes(name)) {
-          name = name.charAt(0).toUpperCase() + name.slice(1).toLowerCase();
-        await queries.insert(name)
-          partyUsers.push(name)
-        
-        }
-        userName = name
+      async function setName(name) {
+          if (ValidateName(name)) {
+              const userCount = await queries.userCount(name);
+
+  //If the bruv does not exist (userCount is null), it inserts the user into guest using queries.insert(name). 
+  //If user already exists, it updates the count 
+              if (userCount === null) {
+                  name = name.charAt(0).toUpperCase() + name.slice(1).toLowerCase();
+                  await queries.insert(name);
+              } else {
+                  await queries.updateCount(name);
+              }
+              userName = name;
+          }
       }
   
-    }//set the names and push them to an array
+      async function getNames() {
+          const names = await queries.getGreetedNames();
+          return names.map((row) => row.name);
+          //retrieves the list of greeted names from the database using queries.getGreetedNames()
+          // and then extracts only the name values from the database results.
+      }
+ 
+  
   
     function getName() {
       return userName;
     }//getting a single name that was set
-  
-   async function getNames() {
-    // let names =  await queries.getGreetedNames()
-      return partyUsers;
-      // return names;
-    }//getting the users
+ 
+ 
   
     function setLanguage(language) {
         languageType = language;
