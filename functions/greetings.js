@@ -9,6 +9,7 @@ export default  function MainGreetings(queries) {
    async function setName(name) {
       if (ValidateName(name)) {
         if (!partyUsers.includes(name)) {
+          name = name.charAt(0).toUpperCase() + name.slice(1).toLowerCase();
         await queries.insert(name)
           partyUsers.push(name)
         

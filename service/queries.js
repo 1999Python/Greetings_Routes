@@ -10,15 +10,16 @@ const query = (db) => {
       };  
       const count = async (name) => {
         return await db.oneOrNone(
-          "SELECT SUM(count) AS count FROM names WHERE name = $1",
+          "SELECT SUM(count) AS count FROM guest WHERE name = $1",
           [name]
         );
       };
 
 const userCount = async (name) => {
-  return await db.oneOrNone("SElECT count FROM guest WHERE name = $1", [name])
+  return await db.one("SELECT count FROM guest WHERE name = $1", [name])
 
 }
+
 
       const getGreetedNames = async () => {
         return await db.any("SELECT DISTINCT name, count FROM guest");
@@ -30,7 +31,7 @@ const userCount = async (name) => {
       };
     
     const updateCount = async () => {
-        return await db.oneOrNone(
+        return await db.one(
             "SELECT COUNT(DISTINCT name) AS count FROM guest"
         );
       };

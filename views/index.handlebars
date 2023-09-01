@@ -74,23 +74,9 @@
   <footer>&#169 Raadiyah Arend Copyright 2023</footer>
 
 </div>
-{{!-- <script>
-  const error = document.querySelector(".error");
-  const theMessage = document.querySelector(".theMessage");
-
- if (error.textContent !== "") {
-    setTimeout(() => {
-      error.textContent = "";
-    }, 3000);
-    }
- if (theMessage.textContent !== "") {
-    setTimeout(() => {
-      theMessage.textContent = "";
-    }, 1000);
-    }
-   
-</script> --}}
 <script>
+const button = document.querySelector('restBtn'); button.addEventListener('click', function() { alert('Your message here'); });
+
   document.addEventListener("DOMContentLoaded", () => {
     const error = document.querySelector(".error");
     const theMessage = document.querySelector(".theMessage");

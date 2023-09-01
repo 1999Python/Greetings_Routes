@@ -59,6 +59,7 @@ body {
     text-decoration: none;
     -webkit-text-stroke: 0.5px black;
     font-size: 1em;
+    
 }
 
 
@@ -116,7 +117,7 @@ input {
 }
   
 button {
-    position: absolute;
+ 
     top: 0;
     border-radius: 5px;
     right: 0px;
@@ -161,24 +162,6 @@ input[type='radio'] {
 }
 
 
-.resetBtn {
-    height: 60px;
-    width: 120px;
-    display: inline-block;
-    padding: 15px 30px;
-    font-size: 1.2em;
-    background-color: #007BFF;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    vertical-align: middle;
-}
-
- .resetBtn:hover {
-    background-color: #0056b3;
-}
 
 /* Value Display */
 .valueDisplay {
@@ -221,4 +204,27 @@ footer {
         width: 100%;
         height: 50px;
     }
+}
+.resetBtn {
+    margin-top: 20px; /* Add space at the top */
+    padding: 10px 20px;
+    font-size: 1.2em;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.resetBtn:hover {
+    background-color: #0056b3;
+}
+
+/* Footer */
+footer {
+    font-size: 1.2em;
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 20px; /* Add space at the bottom */
 }
