@@ -86,27 +86,22 @@ export default  function MainGreetings(queries) {
     }
     
     
-    function setCounter(value) {
-    counter = value;
-    }
+
+    const resetCounter = () => {
+      counter = 0; // Reset the counter
+    };
   
-   
   
-    function getCounter() {
-      return counter;
-    }//get the amount of users 
   
 
   
     return {
       errorMessages,
-     
       getName,
       getNames,
       setName,
       setLanguage,
-      getCounter,
-   
+      resetCounter,
       ValidateName,
       greetingTheUser
     }

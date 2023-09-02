@@ -15,9 +15,7 @@ const query = (db) => {
     );
   };
 
-  // const userCount = async (name) => {
-  //   return await db.one("SELECT count FROM guest WHERE name = $1", [name])
-  // }
+
   const userCount = async (name) => {
     try {
       const result = await db.one("SELECT count FROM guest WHERE name = $1", [name]);

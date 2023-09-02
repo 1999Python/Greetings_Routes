@@ -29,20 +29,36 @@ const routes = (app, queries, greetings) => {
       }
     });
 
+    // app.get('/count/:name', async function (req, res) {
+    //   try {
+    //     const nameToCount = req.params.name;
+    //     const greetedNames = await queries.greetedUser(); // Fetch greeted names from the database
+    
+    //     // Count the occurrences of the specified name
+    //     const count = greetedNames.filter(item => item.name === nameToCount).length;
+    
+    //     res.render('count', { nameToCount, count }); // Render the count template
+    //   } catch (error) {
+    //     console.error('Error fetching greeted names from the database', error);
+    //     res.status(500).send('Error fetching names');
+    //   }
+    // });
+
     app.get('/count/:name', async function (req, res) {
       try {
-        const nameToCount = req.params.name;
-        const greetedNames = await queries.greetedUser(); // Fetch greeted names from the database
+        const nameToCount = req.params.name.toLowerCase(); // Normalize the name to lowercase
+        const greetedNames = await queries.greetedUser();
     
         // Count the occurrences of the specified name
-        const count = greetedNames.filter(item => item.name === nameToCount).length;
+        const count = greetedNames.filter(item => item.name.toLowerCase() === nameToCount).length;
     
-        res.render('count', { nameToCount, count }); // Render the count template
+        res.render('count', { nameToCount, count });
       } catch (error) {
         console.error('Error fetching greeted names from the database', error);
         res.status(500).send('Error fetching names');
       }
     });
+    
     
   
     app.post('/greetings', async function (req, res) {
@@ -75,7 +91,4 @@ const routes = (app, queries, greetings) => {
     
     )}
 
-
-  
-  
   export default routes;
