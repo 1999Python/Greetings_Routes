@@ -2,44 +2,83 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        body {
-            background-image: linear-gradient(to right, rgb(238, 206, 238), rgba(251, 251, 109, 0.887));
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      background-image: linear-gradient(to right, rgb(238, 206, 238), rgba(251, 251, 109, 0.887));
+      font-size: 1.2em;
+      border-style: solid black;
+    }
 
-            font-size: 1.2em;
-            border-style: solid black;
-        }
-        button {
-    display: block;
-    background-color: #ff3399;
-    color: #fff;
-    text-decoration: none;
-    padding: 10px 30px;
-    margin-top: 20px;
-    border-radius: 5px;
-    
-  }
-  
-  .homebtn:hover {
-    background-color: #ff0066;
-  }
-        
-    </style>
+    .homebtn {
+      display: block;
+      background-color: #ff3399;
+      color: #fff;
+      text-decoration: none;
+      padding: 10px 20px;
+      margin-top: 20px;
+      border-radius: 5px;
+      box-sizing: border-box;
+    }
+
+    .homebtn:hover {
+      background-color: #ff99cc;
+    }
+
+    h2 {
+      text-align: center;
+    }
+
+    ul {
+      padding: 0;
+      list-style-type: none;
+    }
+
+    .greetedHbs {
+      display: block;
+      text-decoration: none;
+      color: #000;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      margin: 10px auto;
+      padding: 10px;
+      width: 80%;
+      background-color: #fff;
+    }
+
+    .greetedHbs:hover {
+      background-color: #ff99cc;
+    }
+
+    /* Media Queries for Responsive Design */
+    @media (max-width: 600px) {
+      body {
+        font-size: 1em;
+      }
+
+      button.homebtn {
+        padding: 10px 20px;
+      }
+
+      .greetedHbs {
+        width: 90%;
+      }
+    }
+  </style>
 </head>
 
 <body>
-    <a href='/' class="homebtn"><button>Home</button></a>
-<h2 style="text-align: center;">The following names have been greeted:</h2>
-   <ul>
-  {{#each greetedNames }}
-   <a class="greetedHbs" href="/count/{{name}}"><li>{{this.name}}</li></a>
-  {{/each}}
-</ul>
-
+  <a href="/" class="homebtn" style="text-align: center;">Home</a>
+  <h2>The following names have been greeted:</h2>
+  <ul>
+    {{#each greetedNames }}
+    <a class="greetedHbs" href="/count/{{name}}">
+      <li>{{this.name}}</li>
+    </a>
+    {{/each}}
+  </ul>
 </body>
 
 </html>
-

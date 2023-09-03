@@ -1,129 +1,127 @@
 body {
-   font-size: larger;
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    font-size: large;
-  }
+  font-size: larger;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
 
+.container {
+  max-width: 800px;
+  margin: 20px auto 0;
+  padding: 20px;
+  background: linear-gradient(#ff99cc, #e6e695, #ccffcc);
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.greetingSection {
+  text-align: center;
+}
+
+.error {
+  color: red;
+}
+
+.greet {
+  color: #ff3399;
+}
+
+.nameHeading {
+  color: #ff3399;
+}
+
+.Name {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.enter {
+  background-color: #ff3399;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.langHeading {
+  color: #ff3399;
+  margin-top: 20px;
+}
+
+.radio-container {
+  display: flex;
+  justify-content: center;
+}
+
+.valueLanguages {
+  margin-right: 20px;
+  color: #ff3399;
+  display: flex;
+  align-items: center;
+}
+
+.itemTypeRadio {
+  margin-right: 5px;
+  accent-color: red;
+  width: 20px;
+  height: 10px;
+}
+
+.label-body {
+  font-weight: bold;
+}
+
+.theMessage {
+  margin-top: 20px;
+  font-size: 24px;
+  color: #ff3399;
+}
+
+.valueDisplay {
+  color: #ff3399;
+  font-size: 42px;
+}
+
+.restBtn,
+.btnGrt {
+  display: block;
+  background-color: #ff3399;
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 20px;
+  margin-top: 20px;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.restBtn:hover,
+.btnGrt:hover {
+  background-color: #ff0066;
+}
+
+footer {
+  text-align: center;
+  margin-top: 20px;
+  color: #999;
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 600px) {
   .container {
-    max-width: 800px;
-    margin: 20px auto 0;
-    padding: 20px;
-    background: linear-gradient( #ff99cc, #e6e695, #ccffcc);
-    border-radius: 10px;
-    box-shadow: black;
-  }
-  .greetingSection {
-    text-align: center;
-  }
-
-  .error {
-    color: red;
-  }
-
-  .greet {
-    color: #ff3399;
-  }
-
-  .nameHeading {
-    color: #ff3399;
-  }
-
-  .Name {
-    width: 100%;
     padding: 10px;
-    margin-top: 5px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
   }
 
+  .Name,
   .enter {
-    background-color: #ff3399;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    border-radius: 5px;
+    width: 100%;
   }
 
-  .langHeading {
-    color: #ff3399;
-    margin-top: 20px;
-  }
-
-  .radio-container {
-    display: flex;
-    justify-content: center;
-  }
-
-  .valueLanguages {
-    margin-right: 20px;
-    color: #ff3399;
-    display: flex;
-    align-items: center;
-  }
-
-  .itemTypeRadio {
-    margin-right: 5px;
-    accent-color: red;
-    width: 20px;
-    height: 10px;
-  }
-
-  .label-body {
-    font-weight: bold;
-  }
-
-  .theMessage {
-    margin-top: 20px;
-    font-size: 24px;
-    color: #ff3399;
-  }
-
-  .valueDisplay {
-    color: #ff3399;
-    font-size: 42px;
-  }
-
-  .restBtn {
-    display: block;
-    font-size: 1em;
-    background-color: #ff3399;
-    color: #fff;
-    text-decoration: none;
-    padding: 10px 360px;
-    margin-top: 20px;
-    border-radius: 5px;
-    box-sizing: border-box; /* Add this line */
-  }
-  
-  .restBtn:hover {
-    background-color: #ff0066;
-  }
-  
+  .restBtn,
   .btnGrt {
-    display: block;
-    background-color: #ff3399;
-    color: #fff;
-    text-decoration: none;
-    padding: 10px 20px;
-    margin-top: 20px;
-    border-radius: 5px;
-    box-sizing: border-box; /* Add this line */
+    padding: 10px 10px;
   }
-  
-  .btnGrt:hover {
-    background-color: #ff0066;
-  }
-  
-
-  footer {
-    text-align: center;
-    margin-top: 20px;
-    color: #999;
-  }
-
-
-
-
+}

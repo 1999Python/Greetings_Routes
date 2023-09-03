@@ -11,30 +11,44 @@
             font-size: 1.2em;
             border-style: solid black;
         }
-  .back {
-    text-align: center;
-    display: block;
-    background-color: #ff3399;
-    color: #fff;
-    text-decoration: none;
-    padding: 10px 20px;
-    margin-top: 20px;
-    border-radius: 5px;
-    box-sizing: border-box; /* Add this line */
-  }
-  
-  .back:hover {
-    background-color: #ff0066;
-  }
-  
+
+        h2 {
+            text-align: center;
+        }
+
+        .back {
+            text-align: center;
+            display: block;
+            background-color: #ff3399;
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 20px;
+            margin-top: 20px;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        .back:hover {
+            background-color: #ff0066;
+        }
+
+        /* Media Queries for Responsive Design */
+        @media (max-width: 600px) {
+            body {
+                font-size: 1em;
+            }
+
+            .back {
+                padding: 10px 10px;
+            }
+        }
     </style>
 </head>
 
 <body>
+    <h2>{{ this.name }} This user has been greeted {{ this.count }} times.</h2>
 
-<h2> {{this.name}}This user has been greeted {{this.count}} times.</h2>
-
-<a href="/greeted" class="back">Back</a>
+    <a href="/greeted" class="back">Back</a>
 </body>
 
 </html>
