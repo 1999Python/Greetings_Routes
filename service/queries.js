@@ -40,7 +40,7 @@ const query = (db) => {
   
 
   const getGreetedNames = async () => {
-    return await db.many("SELECT DISTINCT name, count FROM guest");
+    return await db.none("SELECT DISTINCT name, count FROM guest");
   };
 
   const greetedUser = async () => {
