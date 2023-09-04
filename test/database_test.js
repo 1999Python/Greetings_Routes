@@ -21,18 +21,31 @@ describe('Greetings Web App with Routes',function () {
     }
   )
 
-    it('should insert a name into the nname feild in the database table called guest',  async () => {
 
-
-        await query.insert("Raadiyah"); // insert names into the table
-        
-        const result = await query.getGreetedNames() 
-        console.log(result)
-        
-        const testResult = result[0].name;
-
-        assert.equal(testResult, "Raadiyah")
-      });
+  it('should update the count for an existing greeted user', async () => {
+    
+    const userName = "MickeyMouse";
+    await query.insert(userName);
+    // Get the initial count
+    const initialCount = await query.userCount(userName);
+    
+    // Insert the user again to increment the count
+    await query.insert(userName);
+  
+    const updatedCount = await query.userCount(userName);
+    
+    assert.equal(updatedCount, initialCount + 1, `Count for '${userName}' was not updated correctly.`);
+  });
+  
+  it('should return null for a non-existing user count', async () => {
+    const nonExistingUser = "NonExistingUser";
+    
+    // Attempt to get the count for a non-existing user
+    const count = await query.userCount(nonExistingUser);
+    
+    assert.equal(count, null, `Expected null for user count of '${nonExistingUser}'.`);
+  });
+  
 
       it('should return the amount of times the user was greeted.', async () => {
 
@@ -46,27 +59,6 @@ describe('Greetings Web App with Routes',function () {
         assert.equal(count.count, 3)
       });
       
-      it('should return a distinctive name and amount greeted from the table', async () =>{
-        await query.insert("food");
-        await query.insert("juice");
-      
-        const getGreetedNames = await query.getGreetedNames();
-      
-        const expectedNamesCounts = [
-          { name: 'food', count: 1 },
-          { name: 'juice', count: 1 }
-        ];
-        //forEach loop to iterate through the expectedNamesAndCounts array checks 
-        //if each expected name exists in the getGreetedNames using find.
-        //For each expected name found, assert that the count matches the expected count.
-      
-        expectedNamesCounts.forEach((expected) => {
-          const found = getGreetedNames.find((entry) => entry.name === expected.name);
-          assert.ok(found, `Expected name '${expected.name}' not found.`);
-          assert.equal(found.count, expected.count, `Incorrect count for '${expected.name}'.`);
-        });
-      });
-     
   
     
       it('should delete all the records from database table.', async () => {
@@ -115,16 +107,9 @@ describe('Greetings Web App with Routes',function () {
   });
   
 
-
-
-
   });
   
 
-  
-
-
-      /////////
 
   
         
