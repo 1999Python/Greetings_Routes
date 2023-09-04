@@ -1,14 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Greetings widgit</title>
-  <link rel="stylesheet" href="css/styles.css">
-
-</head>
 
 <div class="container">
 
@@ -67,39 +57,15 @@
       <a class="btnGrt" href="/greeted">Greeted Users</a>
     </form>
     
-        <form  action="/reset" method="post"> <button class="restBtn" name="reset" type="submit" {{reset}}>Reset</button></form>
+        <form  action="/reset" method="POST"> <button class="restBtn" name="reset" type="submit" {{reset}}>Reset</button></form>
     
   </section>
 
   <footer>&#169 Raadiyah Arend Copyright 2023</footer>
 
 </div>
-<script>
 
 
-  document.addEventListener("DOMContentLoaded", () => {
-    const error = document.querySelector(".error");
-    const theMessage = document.querySelector(".theMessage");
 
-  if (error.textContent !== "") {
-  console.log("Error content not empty");
-  setTimeout(() => {
-    error.textContent = "";
-    console.log("Error content cleared");
-  }, 3000);
-}
-
-if (theMessage.textContent !== "") {
-  console.log("Message content not empty");
-  setTimeout(() => {
-    theMessage.textContent = "";
-    console.log("Message content cleared");
-  }, 1000);
-}
-
-  });
-</script>
-
-</body>
-
+<script src="/script.js"></script>
 </html>
