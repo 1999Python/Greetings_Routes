@@ -1,13 +1,24 @@
 
 const query = (db) => {
 
-
   const insert = async (greetedName) => {
-    await db.none(
-      "INSERT INTO guest (name, count) VALUES ($1, $2)",
-      [greetedName, 1]
-    );
+    // Check if the user already exists in the database
+    const existingUser = await db.oneOrNone("SELECT * FROM guest WHERE name = $1", [greetedName]);
+    if (existingUser) {
+      //  increment the count if user is existing 
+      await db.none("UPDATE guest SET count = count + 1 WHERE name = $1", [greetedName]);
+    } else {
+      // If the user doesn't exist, insert a new record
+      await db.none("INSERT INTO guest (name, count) VALUES ($1, 1)", [greetedName]);
+    }
   };
+  
+  // const insert = async (greetedName) => {
+  //   await db.none(
+  //     "INSERT INTO guest (name, count) VALUES ($1, $2)",
+  //     [greetedName, 1]
+  //   );
+  // };
   const count = async (name) => {
     return await db.oneOrNone(
       "SELECT SUM(count) AS count FROM guest WHERE name = $1",
@@ -42,6 +53,7 @@ const query = (db) => {
       "SELECT COUNT(DISTINCT name) AS count FROM guest"
     );
   };
+
 
 
   const reset = async () => {

@@ -66,7 +66,9 @@ describe('Greetings Web App with Routes',function () {
           assert.equal(found.count, expected.count, `Incorrect count for '${expected.name}'.`);
         });
       });
-      
+     
+  
+    
       it('should delete all the records from database table.', async () => {
        
         await query.insert("Hidaayatullah");
@@ -79,18 +81,57 @@ describe('Greetings Web App with Routes',function () {
         assert.equal(count.count, 0);
       });
 
+  ///////// 
 
-      });
+  it('should update the count for an existing greeted user', async () => {
+    const userName = "MickeyMouse";
+    await query.insert(userName);
+    
+    const initialCount = await query.userCount(userName);
+    await query.insert(userName); // Increment the count for the same user
+    
+    const updatedCount = await query.userCount(userName);
+    assert.equal(updatedCount, initialCount + 1, `Count for '${userName}' was not updated correctly.`);
+  });
+  
+  it('should return null for a non-existing user count', async () => {
+    const userName = "NonExistingUser";
+    const count = await query.userCount(userName);
+    assert.equal(count, null, `Expected null for user count of '${userName}'.`);
+  });
+  
+  it('should return an empty array when no users are greeted after a reset', async () => {
+   
+    await query.insert("Pink");
+    await query.insert("Yellow");
+    
+    // Check that there are records in the database before reset
+    const countBeforeReset = await query.updateCount();
+    assert.notEqual(countBeforeReset.count, 0, "Expected records in the database before reset.");
+    await query.reset();
+    // Check that there are no records in the database after reset
+    const countAfterReset = await query.updateCount();
+    assert.equal(countAfterReset.count, 0, "Expected no records in the database after reset.");
+  });
+  
+
+
+
+
+  });
+  
+
+  
+
+
+      /////////
+
+  
         
        
       
 
 
 
-    //   it('', async () =>{
-
-    //   });
-
-    //   it('', async () =>{
-        
-    //   });
+  
+    

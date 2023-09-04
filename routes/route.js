@@ -7,7 +7,7 @@ const routes = (app, queries, greetings) => {
     const greetingTheUser = userName ? greetings.greetingTheUser() : '';
     const counter = await queries.updateCount(); // Update the counter from the database
     const errorMessage = req.flash('error');
-    // console.log(errorMessage)
+  
 
     res.render('index', {
       counter: counter.count,
