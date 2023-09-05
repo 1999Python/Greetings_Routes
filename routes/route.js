@@ -50,17 +50,34 @@ const routes = (app, queries, greetings) => {
   app.post('/greetings', async function (req, res) {
     const name = req.body.greetedName;
     const language = req.body.language;
-
-    req.flash('error', greetings.errorMessages(name, language));
-
-    await greetings.setName(name);
-
-    greetings.setLanguage(language);
-
-    // await queries.insert(name); // Insert or update the name's count in the database
-
-    res.redirect('/');
+  
+    // Check if the name is valid before updating the counter
+    if (greetings.ValidateName(name)) {
+      // Update the counter before rendering the view
+      const counter = await queries.updateCount();
+  
+      // Increment the counter if the user is new
+      if (!greetings.getName()) {
+        counter.count++; // Increment the counter
+      }
+  
+      // Set the user's name and language
+      await greetings.setName(name);
+      greetings.setLanguage(language);
+  
+      res.render('index', {
+        counter: counter.count, // Send the updated counter to the view
+        greetingTheUser: greetings.greetingTheUser(),
+        errorMessage: '',
+        successMessage: 'User greeted successfully', // Set a success message
+      });
+    } else {
+      req.flash('error', greetings.errorMessages(name, language));
+      res.redirect('/');
+    }
   });
+  
+  
 
   app.post('/reset', async (req, res) => {
 
