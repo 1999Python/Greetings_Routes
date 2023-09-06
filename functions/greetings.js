@@ -71,6 +71,10 @@ else if (!names) {
 errorMessage = 'Please enter your name.';
 }
 
+// else if(ValidateName(names) && !languages){
+//     errorMessage = 'Please select a language.';
+// }
+
 else if (!ValidateName(names) && !languages) {
 errorMessage = 'Please enter a valid name and a select language.';
 }
