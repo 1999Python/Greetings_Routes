@@ -25,13 +25,15 @@ userName = name;
 }
 async function getNames() {
 const names = await queries.getGreetedNames();
-return names.map((row) => row.name);
+return names.map(row => row.name);
 //retrieves the list of greeted names from the database using queries.getGreetedNames()
 // and then extracts only the name values from the database results.
 }
 function getName() {
 return userName;
 }//getting a single name that was set
+
+
 function clearGreeting() {
 userName = "";
 }
@@ -87,10 +89,6 @@ errorMessage = 'Please enter a valid name.';
 
 return errorMessage;
 }
-
-
-
-
 
 
 return {

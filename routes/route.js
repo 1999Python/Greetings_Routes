@@ -1,99 +1,104 @@
 const routes = (app, queries, greetings) => {
 
-  app.get('/', async function (req, res) {
+  // Home Page Route
+  app.get('/', async (req, res) => {
 
     const userName = await greetings.getName();
-
     const greetingTheUser = userName ? greetings.greetingTheUser() : '';
-    const counter = await queries.updateCount(); // Update the counter from the database
+
+    // Update the counter before rendering the view
+    const counter = await queries.count();
+
     const errorMessage = req.flash('error');
-  
 
     res.render('index', {
-      counter: counter.count,
+      count: counter,
       greetingTheUser,
       errorMessage,
     });
-  });
 
-  app.get('/greeted', async function (req, res) {
-    try {
-      const greetedNames = await queries.getGreetedNames();
-
-
-      console.log(greetedNames)
-      res.render('greeted', { greetedNames });
-    } catch (error) {
-      console.error('Error fetching greeted names from the database', error);
-      res.status(500).send('Error fetching names');
-    }
   });
 
 
-  app.get('/count/:name', async function (req, res) {
-    try {
-      const nameToCount = req.params.name.toLowerCase(); // Normalize the name to lowercase
-      const greetedNames = await queries.greetedUser();
+  // Greeted Names Page Route
+  app.get('/greeted', async (req, res) => {
 
-      // Count the occurrences of the specified name
+    const greetedNames = await queries.getGreetedNames();
+    greetings.clearGreeting();
+    res.render('greeted', { greetedNames });
+
+
+
+  });
+
+  // Count Page Route
+
+  app.get('/count/:name', async (req, res) => {
+    const nameToCount = req.params.name.toLowerCase(); // Normalize the name to lowercase
+    const greetedNames = await queries.userCount(nameToCount);
+  
+    // Check if greetedNames is defined and not empty before filtering it
+    if (greetedNames && greetedNames.length > 0) {
       const count = greetedNames.filter(item => item.name.toLowerCase() === nameToCount).length;
-
       res.render('count', { nameToCount, count });
-    } catch (error) {
-      console.error('Error fetching greeted names from the database', error);
-      res.status(500).send('Error fetching names');
+    } else {
+      // Handle the case where greetedNames is undefined or empty
+      // You can set count to 0 or handle it differently based on your requirements
+      const count = 0;
+      res.render('count', { nameToCount, count });
     }
   });
+  
 
+  // app.get('/count/:name', async (req, res) => {
 
+  //   const nameToCount = req.params.name.toLowerCase(); // Normalize the name to lowercase
+  //   const greetedNames = await queries.userCount(nameToCount);
 
-  app.post('/greetings', async function (req, res) {
+  //   // Count the occurrences of the specified name
+  //   const count = greetedNames.filter(item => item.name.toLowerCase() === nameToCount).length;
+    
+  //   res.render('count', { nameToCount, count });
+
+  // });
+
+  // Greet User Route
+  app.post('/greetings', async (req, res) => {
     const name = req.body.greetedName;
     const language = req.body.language;
+
+    const counterDisplay = await queries.count()
   
-    // Check if the name is valid before updating the counter
-    if (greetings.ValidateName(name)) {
-      // Update the counter before rendering the view
-      const counter = await queries.updateCount();
-  
-      // Increment the counter if the user is new
-      if (!greetings.getName()) {
-        counter.count++; // Increment the counter
-      }
-  
-      // Set the user's name and language
-      await greetings.setName(name);
-      greetings.setLanguage(language);
-  
-      res.render('index', {
-        counter: counter.count, // Send the updated counter to the view
-        greetingTheUser: greetings.greetingTheUser(),
-        errorMessage: '',
-        successMessage: 'User greeted successfully', // Set a success message
-      });
-    } else {
-      req.flash('error', greetings.errorMessages(name, language));
-      res.redirect('/');
-    }
-  });
-  
-  
+    const checkingName = await queries.checkingName(name)
 
-  app.post('/reset', async (req, res) => {
-
-    try {
-      await queries.reset();
-
-      res.redirect('/');
-    }
-    catch (err) {
-
-
-      res.status(500).send('Error resetting app');
-    }
-
-    greetings.clearGreeting()
-  })
-
+if(!checkingName){
+  await queries.insert(name);
 }
+else{
+  await queries.updateCount(name);
+}
+
+    // Set the user's name and language
+    await greetings.setName(name);
+    greetings.setLanguage(language);
+
+    res.render('index', {
+      count: counterDisplay,
+      greetingTheUser: greetings.greetingTheUser(),
+      errorMessage: '',
+      successMessage: 'User greeted successfully',
+    });
+
+
+  });
+
+  // Reset App Route
+  app.post('/reset', async (req, res) => {
+    await queries.reset();
+    greetings.clearGreeting();
+    res.redirect('/');
+
+  });
+};
+
 export default routes;
