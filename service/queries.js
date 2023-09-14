@@ -14,7 +14,7 @@ const query = (db) => {
 
 const checkingName = async (name) => {
 
-const result = await db.manyOrNone("SELECT * FROM guest WHERE name = $1", [name])
+const result = await db.manyOrNone("SELECT 1 FROM guest WHERE name = $1", [name])
 
 return result.length > 0;
 };
@@ -26,9 +26,7 @@ return result.length > 0;
         return result; // Return the count data if it exists
       } else {
         return []; // Return an empty array if no data is found
-      }
-   
-    
+      } 
   };
 
 
@@ -49,7 +47,7 @@ return result.length > 0;
 
   const reset = async () => {
     await db.none('DELETE FROM guest'); // Delete all records from the "guest" table
-
+    await db.one("SELECT setval ('guest_id_seq', 1, false)");
   };
 
   return {
